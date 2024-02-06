@@ -1,0 +1,109 @@
+.button {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.adding-button,
+.save-button,
+.send-button {
+    position: relative;
+    background-color: #3F8CFF;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    padding-left: 40px;
+    box-shadow: #1F6DE0 0px 3px 10px -2px;
+
+    &:hover {
+        background-color: #3A81EB;
+    }
+
+    &:active {
+        background-color: #1F6DE0;
+    }
+
+    &::before {
+        content: '';
+        background-image: url('../icons/adding-button-icon.png');
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        display: block;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+    }
+}
+
+.save-button {
+    padding-left: 20px;
+
+    &::before {
+        display: none;
+    }
+}
+
+.send-button {
+    padding-left: 20px;
+    padding: 20px 26px;
+
+    &::before {
+        background-image: url('../icons/send-button-icon.png');
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.adding-button:disabled,
+.save-button:disabled,
+.send-button:disabled {
+    background-color: #CED5E0;
+    box-shadow: none;
+}
+
+.link-button {
+    color: #3F8CFF;
+    border-bottom: 2px solid #3A81EB;
+    padding: 0;
+    border-radius: 0;
+    padding-top: 5px;
+    padding-right: 18px;
+    line-height: 23px;
+    position: relative;
+
+    &::after {
+        content: '';
+        background-image: url('../icons/button-arrow-icon.png');
+        background-position: center;
+        display: block;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 50%;
+        right: -6px;
+        transform: translateY(-42%);
+    }
+
+    &:hover {
+        color: #3A81EB;
+    }
+
+    &:active {
+        color: #1F6DE0;
+    }
+}
+
+
+.link-button:disabled {
+    color: #CED5E0;
+    border-color: #CED5E0;
+
+    &::after {
+        background-image: url('../icons/button-arrow-icon-hover.png');
+    }
+}

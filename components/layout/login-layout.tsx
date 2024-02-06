@@ -24,7 +24,7 @@ export default function LoginLayout({ children }: Props) {
                     </div>
                     <Image src="/assets/images/backgrounds/login.png" width={500} height={300} alt='login banner' />
                 </div>
-                <div className="login-right">
+                <div className="login-right p-5">
                     {children}
                 </div>
             </div>
