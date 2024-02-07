@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { I18nextProvider, useTranslation } from "react-i18next";
 import { Provider } from "react-redux";
+import '@/public/assets/sass/main.scss'
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -14,8 +15,11 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const initialLng = () => {
     const lang = localStorage.getItem('currentLang')
-    i18nOrigin.changeLanguage(lang || locale)
-    router.push("/", asPath, { locale: lang || locale })
+    
+    i18nOrigin.changeLanguage(`${lang}`)
+    if (lang !== locale) {
+      router.push("/", asPath, { locale: lang || locale })
+    }
   }
 
   useEffect(() => {
